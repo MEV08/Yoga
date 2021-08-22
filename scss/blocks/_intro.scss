@@ -1,0 +1,125 @@
+.intro {
+    margin-bottom: 61px;
+}
+.intro-top {
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    &__add {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__txt {
+        margin-right: 26px;
+        width: 100%;
+        max-width: 554px;
+        font-family: 'Poppins';
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 173.5%;
+        color: $primary;
+    }
+}
+.intro-title__group {
+    margin-right: 111px;
+    width: 100%;
+    max-width: 1173px;
+}
+.intro-top__title {
+    font-family: 'Ramabhadra';
+    font-weight: 400;
+    font-size: 120px;
+    line-height: 125%;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px $primary;
+    color: transparent;
+    &--green {
+        color: $green;
+        -webkit-text-stroke: 0px;
+    }
+}
+.intro-top__membership {
+    margin-top: 36px;
+    &-img {
+        display: block;
+        width: 100%;
+        max-width: 242px;
+        height: auto;
+    }
+}
+.intro-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.intro-bottom__content {
+    margin-top: 535px;
+    margin-right: 7px;
+    width: 100%;
+    max-width: 620px;
+    &-title {
+        font-family: 'Poppins';
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 173.5%;
+        color: $green;
+    }
+    &-txt {
+        font-family: 'Poppins';
+        font-size: 28px;
+        line-height: 173.5%;
+        color: $primary;
+    }
+}
+.intro-bottom__screen {
+    padding-top: 86px;
+    margin-right: 55px;
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        max-width: 818px;
+        height: 100%;
+        max-height: 818px;
+        top: 0;
+        right: 233px;
+        z-index: -20;
+        border-radius: 50%;
+        background: linear-gradient(238.26deg, #48B84A 6.74%, rgba(8, 12, 20, 0) 86.22%);
+    }
+    &-img {
+        display: block;
+        width: 100%;
+        max-width: 898px;
+        height: auto;        
+    }
+    &-left {
+        position: absolute;
+        display: block;
+        width: 100%;
+        max-width: 391px;
+        height: auto;
+        max-height: 141px;
+        z-index: 10;
+        top: 289px;
+        left: -57px;
+    }
+    &-right {
+        position: absolute;
+        display: block;
+        width: 100%;
+        max-width: 159px;
+        height: auto;
+        max-height: 77.4px;
+        z-index: 10;
+        top: 465px;
+        right: -55px;
+    }
+}
+.arrow-btns {
+    margin-bottom: 8px;
+    width: 100%;
+}

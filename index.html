@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Poppins:wght@300;400;500;700&family=Ramabhadra&display=swap" rel="stylesheet">
+    <title>Yoga</title>
+</head>
+<body>
+<!-- Sprite -->
+<svg style="display: none;">
+    <symbol id="btn-arrow" viewBox="0 0 46 25">
+        <g>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M32.2745 0.13633C32.0576 0.226334 31.8606 0.358244 31.6947 0.524505C31.5285 0.690347 31.3966 0.887359 31.3066 1.10426C31.2166 1.32116 31.1702 1.55368 31.1702 1.78852C31.1702 2.02335 31.2166 2.25587 31.3066 2.47277C31.3966 2.68967 31.5285 2.88669 31.6947 3.05253L39.3602 10.7151H2.51531C2.04181 10.7151 1.5877 10.9032 1.25289 11.238C0.918077 11.5728 0.72998 12.0269 0.72998 12.5004C0.72998 12.9739 0.918077 13.4281 1.25289 13.7629C1.5877 14.0977 2.04181 14.2858 2.51531 14.2858H39.3603L31.6947 21.9484C31.3595 22.2836 31.1712 22.7383 31.1712 23.2124C31.1712 23.6865 31.3595 24.1412 31.6947 24.4764C32.03 24.8117 32.4846 25 32.9587 25C33.4328 25 33.8875 24.8117 34.2228 24.4764L44.9347 13.7645C45.101 13.5986 45.2329 13.4016 45.3229 13.1847C45.4129 12.9678 45.4592 12.7353 45.4592 12.5005C45.4592 12.2656 45.4129 12.0331 45.3229 11.8162C45.2329 11.5993 45.101 11.4023 44.9347 11.2365L34.2228 0.524505C34.0569 0.358244 33.8599 0.226334 33.643 0.13633C33.4261 0.046327 33.1936 0 32.9587 0C32.7239 0 32.4914 0.046327 32.2745 0.13633Z"/>
+        </g>
+    </symbol>
+    <symbol id="btnNext" viewBox="0 0 35 35">
+        <g>
+            <path d="M8.00008 17.1C8.00008 16.5463 8.34209 16.0886 8.78582 16.0162L8.90918 16.0062L27.091 16.0062C27.5931 16.0062 28.0001 16.4959 28.0001 17.1C28.0001 17.6537 27.6581 18.1113 27.2144 18.1837L27.091 18.1937L8.90917 18.1937C8.4071 18.1937 8.00008 17.704 8.00008 17.1Z"/>
+            <path d="M19.2077 9.08946C18.7797 8.66325 18.7782 7.97073 19.2044 7.54267C19.5919 7.15353 20.1994 7.11692 20.6283 7.43371L20.7512 7.53934L29.5741 16.3243C29.9644 16.713 29.9999 17.3227 29.6806 17.7516L29.5742 17.8744L20.7513 26.6609C20.3232 27.0871 19.6307 27.0857 19.2045 26.6577C18.817 26.2686 18.7829 25.6608 19.1015 25.2333L19.2077 25.1109L27.2519 17.099L19.2077 9.08946Z"/>
+        </g>
+    </symbol>
+    <symbol id="btnPrev" viewBox="0 0 22 20">
+        <g>
+            <path d="M21.9999 9.90002C21.9999 10.4537 21.6579 10.9114 21.2142 10.9838L21.0908 10.9938L2.90901 10.9938C2.40693 10.9938 1.99992 10.5041 1.99992 9.90002C1.99992 9.3463 2.34192 8.88868 2.78565 8.81626L2.90901 8.80627L21.0908 8.80627C21.5929 8.80627 21.9999 9.29596 21.9999 9.90002Z"/>
+            <path d="M10.7923 17.9105C11.2203 18.3368 11.2218 19.0293 10.7956 19.4573C10.4081 19.8465 9.80057 19.8831 9.37171 19.5663L9.24881 19.4607L0.42589 10.6757C0.0355864 10.287 8.01086e-05 9.67728 0.319388 9.24843L0.425826 9.1256L9.24874 0.339138C9.67676 -0.0871126 10.3693 -0.0856788 10.7955 0.342341C11.183 0.731449 11.2171 1.33916 10.8985 1.76668L10.7923 1.88913L2.74812 9.90103L10.7923 17.9105Z" />
+        </g>
+    </symbol>
+</svg>
+<header class="header">
+    <div class="container">
+        <div class="header-inner">
+            <div class="header-logo">
+                <img class="header-logo__img" src="img/header-logo.png" alt="logo">
+            </div>
+            <nav class="header-nav">
+                <ul class="header-nav_list">
+                    <li class="header-nav_list-item active">
+                        <a class="header-nav_list-link  clicked" href="#">Home</a>
+                    </li>
+                    <li class="header-nav_list-item">
+                        <a class="header-nav_list-link" href="#">Classes</a>
+                    </li>
+                    <li class="header-nav_list-item">
+                        <a class="header-nav_list-link" href="#">Shop</a>
+                    </li>
+                    <li class="header-nav_list-item">
+                        <a class="header-nav_list-link" href="#">My Courses</a>
+                    </li>
+                    <li class="header-nav_list-item">
+                        <a class="header-nav_list-link" href="#">Pricing</a>
+                    </li>
+                    <li class="header-nav_list-item">
+                        <a class="header-nav_list-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <div class="header-nav__additional">
+                    <a class="header-nav__cart" href="#">
+                        <img class="header-nav__cart-img" src="img/cart.svg" alt="cart">
+                    </a>
+                    <a class="header-nav__user" href="#">
+                        <img class="header-nav__user-img" src="img/user-img.png" alt="user">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+<section class="intro">
+    <div class="container">
+        <div class="intro-inner">
+            <div class="intro-top">
+                <div class="intro-title__group">
+                    <h1 class="intro-top__title">
+                        The ultimate
+                        Online personal
+                    </h1>
+                    <h1 class="intro-top__title intro-top__title--green">
+                        Traning plans
+                    </h1> 
+                </div>
+                <div class="intro-top__membership">
+                    <img class="intro-top__membership-img" src="img/membership.png" alt="membership">
+                </div>
+                <div class="intro-top__add">
+                    <p class="intro-top__txt">
+                    Use our diverse media library to create the yoga ritual that suits you. Moved or relaxed, flexible and individual - just your yoga.
+                </p> 
+                </div>                             
+            </div>
+            <div class="intro-bottom">
+                <div class="intro-bottom__content">
+                    <h3 class="intro-bottom__content-title">
+                        We're here for you
+                    </h3>
+                    <p class="intro-bottom__content-txt">
+                        Choose the right one from our constantly growing media library. Whenever you want. Where you want.
+                    </p>
+                </div>
+                <div class="intro-bottom__screen">
+                    <img class="intro-bottom__screen-left" src="img/screen-left.png" alt="screen-left">
+                    <img class="intro-bottom__screen-img" src="img/intro-main.png" alt="screen">
+                    <img class="intro-bottom__screen-right" src="img/screen-right.png" alt="screen-right">
+                </div>
+                <div class="arrow-btns">
+                    <button class="arrow-btn" type="button">
+                        <svg class="arrow-btn__img arrow-btn__img--left">
+                            <use xlink:href="#btn-arrow"></use>
+                        </svg>
+                    </button>
+                    <button class="arrow-btn aroow-btn--right" type="button">
+                        <svg class="arrow-btn__img">
+                            <use xlink:href="#btn-arrow"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="teachers">
+    <div class="container">
+        <div class="teachers-inner">
+            <h2 class="teachers-title">
+                Our Teachers
+            </h2>
+        </div>
+    </div>
+    <div class="teachers-slider__wrapper">
+        <div class="teachers-content">
+            <!-- test -->
+            <div class="teachers-item">
+                <img class="teachers-item__img" src="img/teachers/rao.png" alt="Kohli">
+                <h4 class="teachers-item__name">
+                    Shweta Rao
+                </h4>
+                <h5 class="teachers-item__prof">
+                    Ashtanga Yoga
+                </h5>
+            </div>
+            <!-- test -->
+            <div class="teachers-item">
+                <img class="teachers-item__img" src="img/teachers/kohli.png" alt="Kohli">
+                <h4 class="teachers-item__name">
+                    Arjun Kohli
+                </h4>
+                <h5 class="teachers-item__prof">
+                    Kickboxing
+                </h5>
+            </div>
+            <div class="teachers-item">
+                <img class="teachers-item__img" src="img/teachers/rao.png" alt="Kohli">
+                <h4 class="teachers-item__name">
+                    Shweta Rao
+                </h4>
+                <h5 class="teachers-item__prof">
+                    Ashtanga Yoga
+                </h5>
+            </div>
+            <div class="teachers-item">
+                <img class="teachers-item__img" src="img/teachers/purohit.png" alt="Kohli">
+                <h4 class="teachers-item__name">
+                    Suryansh Purohit
+                </h4>
+                <h5 class="teachers-item__prof">
+                    yoga and meditation expert
+                </h5>
+            </div>
+            <div class="teachers-item">
+                <img class="teachers-item__img" src="img/teachers/dobhal.png" alt="Kohli">
+                <h4 class="teachers-item__name">
+                    Sangeeta Dobhal
+                </h4>
+                <h5 class="teachers-item__prof">
+                    Ashtanga Vinyasa Flow
+                </h5>
+            </div>
+            <div class="teachers-item">
+                <img class="teachers-item__img" src="img/teachers/thakur.png" alt="Kohli">
+                <h4 class="teachers-item__name">
+                    Manisha Thakur
+                </h4>
+                <h5 class="teachers-item__prof">
+                    Hatha Yoga
+                </h5>
+            </div>
+            <!-- test -->
+            <div class="teachers-item">
+                <img class="teachers-item__img" src="img/teachers/rao.png" alt="Kohli">
+                <h4 class="teachers-item__name">
+                    Shweta Rao
+                </h4>
+                <h5 class="teachers-item__prof">
+                    Ashtanga Yoga
+                </h5>
+            </div>
+            <!-- test -->
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="slides-btns">
+            <button class="slider-btn" id="teachersPrev">
+                <svg class="slider-btn__img slider-btn__img--left">
+                    <use xlink:href="#btnNext"></use>
+                </svg>
+            </button>
+            <div class="numbers">1/7</div>
+            <button class="slider-btn" id="teachersNext">
+                <svg class="slider-btn__img">
+                    <use xlink:href="#btnNext"></use>
+                </svg>
+            </button>
+            
+        </div>
+    </div>  
+</section>
+<footer>
+
+</footer>    
+<script src="carousel.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

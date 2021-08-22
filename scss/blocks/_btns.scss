@@ -1,0 +1,50 @@
+.arrow-btn {
+    margin-right: 24px;
+    padding: 0;
+    width: 44.75px;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    opacity: 0.5;
+    transform: scale(0.75);
+    transition: all .2s linear;
+    &__img {
+        width: 44.75px;
+        height: 25px;
+        fill: $green;
+        &--left {
+            transform: rotate(180deg);
+        }
+    }    
+    &:hover {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.slider-btn {
+    margin-left: 29px;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s linear;
+    &:nth-child(1) {
+        margin-right: 29px;
+        margin-left: 0;
+    }
+    &__img {
+        width: 19.76px;
+        height: 21.9px;
+        fill: $dark-grey; 
+        &--left {
+            transform: rotate(180deg);
+        }      
+    } 
+    &:hover {
+        transform: scale(1.3);
+    } 
+}
