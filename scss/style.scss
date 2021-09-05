@@ -22,10 +22,18 @@ body {
     max-width: 1610px;
     padding: 0 15px;
     margin: 0 auto;
-    overflow: hidden;
+    // overflow: hidden;
 }
 /* Blocks */ 
 @import "blocks/header";
 @import "blocks/intro";
 @import "blocks/btns";
 @import "blocks/teachers";
+@import "blocks/whyus";
+@import "blocks/reviews";
+@import "blocks/workshops";
+@import "blocks/classes";
+@import "blocks/plans";
+@import "blocks/courses";
+@import "blocks/subscribe";
+@import "blocks/footer";

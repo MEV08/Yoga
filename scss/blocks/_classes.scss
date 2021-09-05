@@ -1,0 +1,87 @@
+.classes {
+    margin-bottom: 57px;
+    &-title {
+    margin-bottom: 50px;
+    padding-left: 9px;
+    font-family: 'Ramabhadra';
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 125%;
+    color: transparent;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px $primary;
+    }
+}
+.classes-content {
+    padding: 0 13px 0 9px;
+    display: flex;
+    &__info {
+        margin-right: 58px;
+        max-width: 619px;
+    }
+    &__info-txt {
+        padding-bottom: 17px;
+        font-family: 'Poppins';
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 173.5%;
+        color: $primary;
+    }
+}
+.classes-content__sub {
+    padding-top: 274px;
+    padding-bottom: 55px;
+    margin-top: 9px;
+    width: 100%;
+    max-width: 840.57px;
+    // height: 100%;
+    max-height: 712px;
+    position: relative;
+    border-radius: 5px;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, $main-bg 87.86%), url('../img/classes/gym.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    &-play {
+        margin-bottom: 59px;
+    }
+    &-title {
+        margin-bottom: 16px;
+        font-family: 'Poppins';
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 125%;
+        color: $third-bg;
+    }
+    &-info {
+        padding-bottom: 39px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-name {
+        font-family: 'Poppins';
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 125%;
+        color: $primary;
+    }
+    &:before {
+        content: url('../img/classes/time.png');
+        position: absolute;
+        width: 224px;
+        height: 224px;
+        top: -112px;
+        right: -40px;
+        z-index: 5;
+    }
+}
+.play {
+    width: 114px;
+    height: 114px;
+}
+.user {
+    margin-right: 11px;
+    width: 42px;
+    height: 42px;
+}

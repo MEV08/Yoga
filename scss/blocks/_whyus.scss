@@ -1,0 +1,79 @@
+.whyus {
+    padding-bottom: 157px;
+    &-content {
+
+        display: flex;
+    }
+}
+.whyus-info {
+    padding-bottom: 28px;
+    margin-right: 38px;
+    width: 53.7%;
+    max-width: 843px;
+    &__title {
+        margin-bottom: 23px;
+        font-family: 'Ramabhadra';
+        font-weight: 400;
+        font-size: 100px;
+        line-height: 125%;
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-text-stroke: 1px $primary;
+    }   
+    &__txt {
+        font-family: 'Poppins';
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 173.5%;
+        color: $primary;
+    }
+    &__txt-block {
+        padding-bottom: 40px;
+        &:last-child {
+            padding-bottom: 30px;
+        }
+    }
+}
+.whyus-preview {
+    width: 46.3%;
+    max-width: 699px;
+    display: flex;
+    position: relative;
+    &__left {
+        padding: 110px 0 0;
+        margin-right: 47px;
+        width: 50%;
+    }
+    &__img {
+        margin-bottom: 43px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        max-width: 520.58px;
+        height: 100%;
+        max-height: 520.58px;
+        border-radius: 50%;
+        background: linear-gradient(238.26deg, rgba(72, 184, 74, 0.31) 6.74%, rgba(8, 12, 20, 0) 86.22%);
+        transform: matrix(0.3, -0.95, -0.95, -0.3, 0, 0);
+        top: -125px;
+        left: 230px;
+        z-index: -10;
+    }
+    &:after {
+        content: url('../img/whyus/vector.png');
+        position: absolute;
+        display: block;
+        width: 100%;
+        max-width: 663px;
+        max-height: 1079px;
+        bottom: 68px;
+        left: 437px;
+        z-index: -20;
+    }
+}

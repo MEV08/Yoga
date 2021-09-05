@@ -1,0 +1,105 @@
+.subscribe {
+    margin-bottom: 48px;
+    &-title {
+        margin-bottom: 29px;
+    font-family: 'Ramabhadra';
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 125%;
+    color: transparent;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px $primary;
+    text-align: center;
+    }
+    &-subtitle {
+        margin-bottom: 75px;
+        font-family: 'Ramabhadra';
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 125%;
+        text-transform: uppercase;
+        color: $primary;
+        text-align: center;
+    }
+    &-wrapper {
+        width: 100%;
+        position: relative;
+    }
+    &-form {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    &-form__input {
+        margin-right: 8px;
+        padding: 21px 40px;
+        width: 100%;
+        max-width: 715px;
+        background: $additional-bg;
+        border-radius: 10px;
+        border: none;
+        font-family: 'Poppins';
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 181%;
+        color: darken($primary, 25%);
+        &::placeholder {
+            font-family: 'Poppins';
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 181%;
+            color: darken($primary, 25%);
+        }   
+    }
+    &-form__btn {
+        max-width: 222px;
+        height: 87px;
+        padding: 21px 47px;
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 181%;
+        color: $primary;
+        border-radius: 10px;
+        background: $third-bg;
+        border: none;
+        &:hover {
+            box-shadow: 3px 1px 11px 1px $green;
+        }
+    }
+    &-outer {
+        max-width: 69px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: -102px;
+        bottom: -7px;
+    }
+    &-outer__wrapper {
+        width: 69px;
+        height: 69px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #48B74A;
+        cursor: pointer;
+        &:first-child {
+            margin-bottom: 31px;
+        }
+        &:hover {
+            box-shadow: 3px 1px 17px 2px #48B74A;
+        }
+    }
+}
+.phone {
+    width: 31.27px;
+    height: 31.37px;
+    fill: $primary;
+}
+.message {
+    width: 35.02px;
+    height: 26.28px;
+    fill: $primary;
+}

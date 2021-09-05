@@ -8,7 +8,7 @@ class SliderCarousel{
         prev,
         infinity = false,
         position = 0,
-        slidesToShow = 2,
+        slidesToShow = 1,
     }) {
         this.main = document.querySelector(main);
         this.wrap = document.querySelector(wrap);
@@ -38,6 +38,7 @@ class SliderCarousel{
         for (const item of this.slides) {
             item.classList.add('slider__item');
         }
+
     }
     addStyle() {
         const style = document.createElement('style');
@@ -55,6 +56,9 @@ class SliderCarousel{
                 flex: 0 0 ${this.options.widthSlide}% !important;
                 border: 1px solid green !important;
             }
+            .slider__item--active {
+                transform: scale(1.2);
+            }
         `;
         document.head.appendChild(style);
     } 
@@ -71,7 +75,7 @@ class SliderCarousel{
             }
             this.wrap.style.transform = `translateX(-${this.options.position * this.options.widthSlide}%)`
         }
-        
+
     }
     nextSlider() {
         if (this.options.infinity || this.options.position < this.slides.length - this.slidesToShow) {
@@ -82,7 +86,6 @@ class SliderCarousel{
             }
             this.wrap.style.transform = `translateX(-${this.options.position * this.options.widthSlide}%)`
         }
-        
     }
     addArrow() {
 
