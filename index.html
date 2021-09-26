@@ -188,10 +188,10 @@
             </h2>
         </div>
     </div>
-    <div class="teachers-slider__wrapper">
+    <div class="teachers-slider__wrapper" id="teachersSlider">
         <div class="teachers-content">
             <!-- test -->
-            <div class="teachers-item">
+            <!-- <div class="teachers-item">
                 <img class="teachers-item__img" src="img/teachers/rao.png" alt="Kohli">
                 <h4 class="teachers-item__name">
                     Shweta Rao
@@ -199,7 +199,7 @@
                 <h5 class="teachers-item__prof">
                     Ashtanga Yoga
                 </h5>
-            </div>
+            </div> -->
             <!-- test -->
             <div class="teachers-item">
                 <img class="teachers-item__img" src="img/teachers/kohli.png" alt="Kohli">
@@ -247,7 +247,7 @@
                 </h5>
             </div>
             <!-- test -->
-            <div class="teachers-item">
+            <!-- <div class="teachers-item">
                 <img class="teachers-item__img" src="img/teachers/rao.png" alt="Kohli">
                 <h4 class="teachers-item__name">
                     Shweta Rao
@@ -255,7 +255,7 @@
                 <h5 class="teachers-item__prof">
                     Ashtanga Yoga
                 </h5>
-            </div>
+            </div> -->
             <!-- test -->
         </div>
     </div>
@@ -267,7 +267,7 @@
                     <use xlink:href="#btnNext"></use>
                 </svg>
             </button>
-            <div class="numbers">1/7</div>
+            <div class="numbers teachers-numbers"></div>
             <button class="slider-btn" id="teachersNext">
                 <svg class="slider-btn__img">
                     <use xlink:href="#btnNext"></use>
@@ -660,8 +660,9 @@
             Courses
         </h2>
     </div>
-        <div class="courses-slider">
-            <div class="courses-slider-line">
+    <div class="container">
+        <div class="courses-slider" id="courses-slider">
+            <div class="courses-slider__line">
                 <div class="courses-slider__item">
                     <img class="courses-slider__item-img" src="img/courses/courses-2.png" alt="">
                     <div class="courses-slider__item-play">
@@ -762,22 +763,24 @@
                     </div>
                 </div>
             </div>
-        </div>
-    <div class="container">
-        <div class="slides-btns">
-            <button class="slider-btn" id="coursesPrev">
-                <svg class="slider-btn__img slider-btn__img--left">
-                    <use xlink:href="#btnNext"></use>
-                </svg>
-            </button>
-            <div class="courses-numbers">1 / 7</div>
-            <button class="slider-btn" id="coursesNext">
-                <svg class="slider-btn__img">
-                    <use xlink:href="#btnNext"></use>
-                </svg>
-            </button>           
+            <div class="container">
+                <div class="slides-btns courses-slides__btns">
+                    <button class="slider-btn" id="coursesPrev">
+                        <svg class="slider-btn__img slider-btn__img--left">
+                            <use xlink:href="#btnNext"></use>
+                        </svg>
+                    </button>
+                    <div class="courses-numbers"> </div>
+                    <button class="slider-btn" id="coursesNext">
+                        <svg class="slider-btn__img">
+                            <use xlink:href="#btnNext"></use>
+                        </svg>
+                    </button>           
+                </div>
+            </div>
         </div>
     </div>
+        
 </section>
 <section class="subscribe">
     <div class="container">

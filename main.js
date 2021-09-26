@@ -1,18 +1,17 @@
-
 const teachersSlider = new SliderCarousel({
-    main: '.teachers-slider__wrapper',
-    wrap: '.teachers-content',
-    prev: '#teachersPrev',
-    next: '#teachersNext',
-    slidesToShow: 5,
-    infinity: true
+  slider: '#teachersSlider',
+  sliderLine: '.teachers-content',
+  btnNext: '#teachersNext',
+  btnPrev: '#teachersPrev',
+  numbers: '.teachers-numbers',
 });
 teachersSlider.init();
-let offset = 0;
-const sliderLine = document.querySelector('.courses-slider-line');
-const coursesPrev = document.querySelector('#coursesPrev');
-const coursesNext = document.querySelector('#coursesNext');
-const itemWidth = document.querySelector('.courses-slider__item').offsetWidth;
-const numbers = document.querySelector('.courses-numbers');
-const itemsQuantity = sliderLine.children;
+const coursesSlider = new SliderCarousel({
+  slider: '#courses-slider',
+  sliderLine: '.courses-slider__line',
+  btnNext: '#coursesNext',
+  btnPrev: '#coursesPrev',
+  numbers: '.courses-numbers',
+});
+coursesSlider.init();
 

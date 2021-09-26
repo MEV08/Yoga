@@ -1,93 +1,74 @@
-'use strict';
-// Teachers-slider
-class SliderCarousel{
+class SliderCarousel {
     constructor({
-        main, 
-        wrap,
-        next, 
-        prev,
-        infinity = false,
-        position = 0,
-        slidesToShow = 1,
+        slider,
+        sliderLine,
+        btnPrev,
+        btnNext,
+        numbers,
+        activeSlideIndex = 1,
     }) {
-        this.main = document.querySelector(main);
-        this.wrap = document.querySelector(wrap);
-        this.slides = document.querySelector(wrap).children;
-        this.next = document.querySelector(next);
-        this.prev = document.querySelector(prev);
-        this.slidesToShow = slidesToShow;
-        this.options = {
-            position,
-            infinity,
-            widthSlide: Math.floor(100 / this.slidesToShow)
-        };
+        this.slider = document.querySelector(slider);
+        this.sliderLine = document.querySelector(sliderLine);
+        this.slides = document.querySelector(sliderLine).children;
+        this.btnPrev = document.querySelector(btnPrev);
+        this.btnNext = document.querySelector(btnNext);
+        this.numbers = document.querySelector(numbers);
+        this.activeSlideIndex = activeSlideIndex;
+        this.maxSlideIndex = this.slides.length - 1;
+        this.itemWidth = this.slides[0].offsetWidth;
     }
     init() {
-        this.addClass();
-        this.addStyle();
-        if (this.prev && this.next) {
-            this.controlSlider();
-        } else {
-            this.addArrow();
-            this.controlSlider();
+        this.clickSlide();
+        this.btnPrev.addEventListener('click', () => {
+            this.prevSlide();
+        });
+        this.btnNext.addEventListener('click', () => {
+            this.nextSlide();
+        });
+        this.sliderLine.style.left = - (this.activeSlideIndex * this.itemWidth) + 'px';
+        Array.from(this.slides)[this.activeSlideIndex].classList.add('active');
+        this.numbers.innerHTML = `${this.activeSlideIndex + 1} / ${this.maxSlideIndex + 1}`;
+    }
+    prevSlide() {
+        this.changeSlide('prev');
+    }
+    nextSlide() {
+        this.changeSlide('next');
+    }
+    changeSlide(direction) {
+        if (direction === 'prev') {
+            this.clearActiveClasses();
+            this.activeSlideIndex--;
+            if (this.activeSlideIndex < 0) {
+                this.activeSlideIndex = this.maxSlideIndex;
+            }
+            Array.from(this.slides)[this.activeSlideIndex].classList.add('active');
+            this.sliderLine.style.left = -(this.activeSlideIndex * this.itemWidth) + 'px';
+        } else if (direction === 'next') {
+            this.clearActiveClasses();
+            this.activeSlideIndex++;
+            if (this.activeSlideIndex > this.maxSlideIndex) {
+                this.activeSlideIndex = 0;
+            }
+            Array.from(this.slides)[this.activeSlideIndex].classList.add('active');
+            this.sliderLine.style.left = - (this.activeSlideIndex * this.itemWidth) + 'px';
+        }
+        this.numbers.innerHTML = `${this.activeSlideIndex + 1} / ${this.maxSlideIndex + 1}`;
+    }
+    clearActiveClasses() {
+        Array.from(this.slides).forEach((slide) => {
+            slide.classList.remove('active');
+        })
+    }
+    clickSlide() {
+        for (let i = 0; i < this.slides.length; i++) {
+            this.slides[i].addEventListener('click', () => {
+                this.activeSlideIndex = i;
+                this.clearActiveClasses();
+                Array.from(this.slides)[i].classList.add('active');
+                this.numbers.innerHTML = `${this.activeSlideIndex + 1} / ${this.maxSlideIndex + 1}`;
+                this.sliderLine.style.left = - (this.activeSlideIndex * this.itemWidth) + 'px';
+            })
         }
     }
-    addClass() {
-        this.main.classList.add('slider');
-        this.wrap.classList.add('slider__wrap');
-        for (const item of this.slides) {
-            item.classList.add('slider__item');
-        }
-
-    }
-    addStyle() {
-        const style = document.createElement('style');
-        style.id = 'sliderCarousel-style';
-        style.textContent = `
-            .slider {
-                overflow: hidden !important;
-            }
-            .slider__wrap {
-                display: flex !important;
-                transition: transform .3s !important;
-                will-change: transform !important;
-            }
-            .slider__item {
-                flex: 0 0 ${this.options.widthSlide}% !important;
-                border: 1px solid green !important;
-            }
-            .slider__item--active {
-                transform: scale(1.2);
-            }
-        `;
-        document.head.appendChild(style);
-    } 
-    controlSlider() {
-        this.prev.addEventListener('click', this.prevSlider.bind(this));
-        this.next.addEventListener('click', this.nextSlider.bind(this));
-    }
-    prevSlider() {
-        if (this.options.infinity || this.options.position > 0 ) {
-            --this.options.position;
-            console.log(this.options.position);
-            if (this.options.position < 0) {
-                this.options.position = this.slides.length - this.slidesToShow
-            }
-            this.wrap.style.transform = `translateX(-${this.options.position * this.options.widthSlide}%)`
-        }
-
-    }
-    nextSlider() {
-        if (this.options.infinity || this.options.position < this.slides.length - this.slidesToShow) {
-            ++this.options.position;
-            console.log(this.options.position);
-            if (this.options.position > this.slides.length - this.slidesToShow) {
-                this.options.position = 0;
-            }
-            this.wrap.style.transform = `translateX(-${this.options.position * this.options.widthSlide}%)`
-        }
-    }
-    addArrow() {
-
-    }
-} 
+}
